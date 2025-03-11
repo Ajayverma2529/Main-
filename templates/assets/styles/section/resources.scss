@@ -1,0 +1,246 @@
+.resources {
+  background-color: $black;
+  .content-wrap {
+    text-align: center;
+    padding-bottom: 60px;
+    h2 {
+      font-size: 36px;
+      font-weight: 600;
+      color: $white;
+    }
+    p {
+      font-size: 20px;
+      font-weight: normal;
+      color: $white;
+      padding-top: 20px;
+
+    }
+  }
+  .outer-wrap {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    display: flex;
+    flex-wrap: wrap;
+    @include tablet {
+      width: 100%;
+      display: block;
+      margin: auto;
+    }
+    @include phablet {
+      width: 100%;
+      display: block;
+      margin: auto;
+    }
+    @include phablet-down {
+      width: 100%;
+      display: block;
+      margin: auto;
+    }
+    .item {
+      position: relative;
+      width: calc(50% - 30px);
+      margin: 0 15px;
+      @include tablet {
+        width: 100%;
+        margin: auto;
+        padding-bottom: 20px;
+      }
+      @include phablet {
+        width: 100%;
+        margin: auto;
+        padding-bottom: 20px;
+      }
+      @include phablet-down {
+        width: 100%;
+        margin: auto;
+        padding-bottom: 20px;
+      }
+      .img-wrap {
+        height: 580px;
+        overflow: hidden;
+        @include phablet {
+          height: 400px;
+        }
+        @include phablet-down {
+          height: 400px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.9;
+          transition: transform 0.3s ease-in-out;
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 59%, rgba(0, 0, 0, 0.8) 100%);
+        }
+      }
+      .icon-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 215px;
+        max-height: 81px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .inner-content {
+        position: absolute;
+        bottom: 60px;
+        padding: 20px;
+        display: flex;
+        .col-seven {
+          width: 80%;
+          h3 {
+            font-size: 30px;
+            color: $white;
+            padding-bottom: 20px;
+            height: 98px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+          }
+          .btn-default {
+            color: $white;
+          }
+        }
+        .col-three {
+          width: 20%;
+          .inner-wrap {
+            span {
+              font-size: 36px;
+              font-weight: bold;
+              color: red;
+
+            }
+            h4 {
+              font-family: Inter;
+              font-weight: normal;
+              font-size: 14px;
+              color: $white;
+            }
+          }
+        }
+      }
+      .card {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 36px;
+        height: 273px;
+        border: 0;
+        background-image: linear-gradient(501deg, #202e4a -60%, #0086a1 119%, #004c6c -16%);
+        @include phablet-down {
+          height: 100%;
+        }
+        .outer-img-wrap {
+          width: 40%;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include phablet-down {
+            width: 100%;
+          }
+          .img-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            height: 273px;
+
+            @include phablet-down {
+              height: 242px;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.3s ease-in-out;
+            }
+          }
+          .logo-wrap {
+            position: absolute;
+            max-width: 200px;
+            max-height: 100px;
+            margin: auto;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+        .text-wrapper {
+          position: relative;
+          width: 60%;
+          height: 100%;
+          padding: 40px 40px 80px;
+          @include phablet-down {
+            width: 100%;
+            padding: 25px;
+          }
+          span {
+            color: $white;
+          }
+          h4 {
+            color: $white;
+            padding: 25px 0;
+            height: 112px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            @include tablet {
+              height: 106px;
+            }
+            @include tablet-down {
+              padding: 15px 0;
+            }
+            @include phablet {
+              height: 107px;
+            }
+            @include phablet-down {
+              height: 71px;
+            }
+          }
+        }
+        .btn-default{
+          position: absolute;
+          bottom: 35px;
+          left: 44px;
+          @include phablet-down{
+            position: relative;
+            bottom: 0;
+            left: 0;
+          }
+        }
+        &.full-width {
+          .outer-img-wrap {
+            width: 100%;
+          }
+        }
+        &:hover {
+          .img-wrapper {
+            img {
+              transform: scale(1.1, 1.1);
+            }
+          }
+        }
+      }
+      .inner-wrap {
+        &:hover{
+          .img-wrap {
+            img {
+              transform: scale(1.1, 1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

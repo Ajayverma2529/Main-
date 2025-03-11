@@ -1,0 +1,933 @@
+.info-with-tabs {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 94px;
+  .intro-box h2 {
+    font-weight: bold;
+
+    @include container-up {
+      margin-bottom: 38px;
+    }
+
+    &:after {
+      @include container-up {
+        bottom: -18.1px;
+      }
+    }
+  }
+
+  .bg-img {
+    position: absolute;
+    top: 158px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @include desktop-down {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  .pattern-animation {
+    position: absolute;
+    width: 308px;
+    height: 316px;
+    z-index: 0;
+    right: -2.4%;
+    bottom: -5.5%;
+
+    @media screen and (min-width: 992px) and (max-width: 1240px) {
+      rigth: 1%;
+    }
+
+    img,
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @include desktop-down {
+      display: none;
+    }
+  }
+
+  .column-wrapper {
+    background-color: $white;
+    box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.06);
+    margin-top: 12px;
+    position: relative;
+    min-height: 564px;
+    overflow: hidden;
+
+    button {
+      display: none;
+
+      @include tablet-down {
+        position: relative;
+        cursor: pointer;
+        background-color: rgb(23, 107, 135);
+        width: 100%;
+        font-size: 16px;
+        padding: 13px 0;
+        outline: none;
+        border: 1px solid $white;
+        color: $white;
+        min-height: 55px;
+      }
+
+      @include tablet-down {
+        display: block;
+      }
+
+      &.slick-arrow {
+        text-indent: -99999px;
+        position: absolute;
+        bottom: -44px;
+        left: 48%;
+        width: 25px;
+        height: 25px;
+        outline: none;
+        cursor: pointer;
+        background: url(/themes/custom/rms/templates/dist/images/arrow-right-small.svg)
+        no-repeat;
+        background-size: 100%;
+        transform: translate(-50%, -50%) rotate(180deg);
+        background-position: center;
+
+        @include desktop {
+          left: 44%;
+        }
+
+        @include tablet {
+          left: 44%;
+        }
+
+        @include tablet-down {
+          display: none;
+        }
+
+        &.slick-next {
+          transform: translate(-50%, -50%) rotate(0deg);
+          left: auto;
+          right: 46%;
+
+          @include desktop {
+            right: 42%;
+          }
+
+          @include tablet {
+            right: 42%;
+          }
+        }
+      }
+
+      &.open {
+        &:after {
+          @include tablet-down {
+            background-image: url("/ajayverma/templates/assets/images/next-arrow-white.svg");
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 24px;
+            margin: auto;
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+            transform: rotate(90deg);
+            background-repeat: no-repeat;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+
+      &.active {
+        &:after {
+          transform: rotate(-90deg);
+        }
+      }
+
+      .cover {
+        @include tablet-down {
+          display: flex;
+          min-width: 200px;
+          margin: 0 auto;
+          align-items: center;
+          padding: 0 24px;
+          flex-wrap: wrap;
+        }
+
+        .icon-box {
+          @include tablet-down {
+            width: 29px;
+            height: 30px;
+            margin: 0;
+          }
+
+          @include phablet-down {
+            width: 24px;
+          }
+
+          svg {
+            width: 100%;
+            height: 100%;
+
+            path {
+              fill: $white;
+            }
+
+            .cls-1,
+            .cls-2 {
+              @include tablet-down {
+                stroke: $white;
+                fill: $white;
+              }
+            }
+
+            .st0 {
+              @include tablet-down {
+                fill: $white;
+              }
+            }
+            .st1 {
+              @include tablet-down {
+                stroke: $white;
+                fill: none !important;
+              }
+            }
+          }
+        }
+      }
+
+      span {
+        display: none;
+
+        @include tablet-down {
+          display: inline-block;
+          max-width: 100%;
+          margin: 0 auto;
+
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+
+      p {
+        @include tablet-down {
+          color: $white;
+          font-weight: bold;
+          padding-left: 16px;
+          font-size: 14px;
+          width: 89.5%;
+          text-align: left;
+        }
+
+        @include phone-down {
+          width: 78.5%;
+        }
+      }
+
+      .active-arrow {
+        display: none;
+      }
+    }
+
+    .scroll-wrap {
+      width: calc(100% + 1px);
+      user-select: text;
+      text-align: center;
+      font-size: 0;
+
+      @include tablet-down {
+        display: none;
+        width: 100%;
+      }
+
+      &.current-item {
+        @include tablet-down {
+          display: block;
+        }
+      }
+
+      .tab-div {
+        display: flex;
+
+        @include tablet-down {
+          display: block;
+        }
+      }
+
+      .icon-with-heading {
+        flex-grow: 6;
+        width: 20%;
+        display: inline-block;
+        min-height: 168px;
+        cursor: pointer;
+        border-bottom: 1px solid black;
+        position: relative;
+        vertical-align: top;
+        padding: 19px 10px 0 10px;
+
+        @include container-down {
+          //padding: 10px 10px 20px;
+          padding: 20px 10px 20px;
+        }
+
+        @include desktop-down {
+          padding: 20px 8px;
+        }
+
+        @include tablet-down {
+          border: 0;
+          border-bottom: 1px solid red;
+          padding: 12px 24px;
+          width: 100%;
+          max-width: 100%;
+          display: flex;
+          min-height: 55px;
+          align-items: center;
+        }
+
+        @include phablet-down {
+          flex-wrap: wrap;
+        }
+
+        &.item {
+          outline: none;
+
+          &:after {
+            content: "";
+            display: block;
+            clear: both;
+          }
+        }
+
+        .icon-box {
+          width: 40px;
+          height: 68px;
+          margin: 0 auto 3px;
+
+          //@include container-down {
+          //  margin: 0 auto 25px;
+          //}
+
+          @include desktop-down {
+            //width: 60px;
+            //height: 60px;
+
+            width: 45px;
+            height: 45px;
+            margin: 0 auto 18px;
+          }
+          @include tablet-down {
+            width: 25px;
+            height: 100%;
+            margin: 0;
+          }
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        p {
+          color: $black;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 1.55;
+          letter-spacing: normal;
+          text-align: center;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          height: auto;
+          max-height: 56px;
+
+          @include container-up {
+            -webkit-line-clamp: 2;
+          }
+
+          @include desktop {
+            font-size: 20px;
+            -webkit-line-clamp: 2;
+            word-break: break-word;
+            max-height: 62px;
+          }
+
+          @include tablet {
+            font-size: 14px;
+            -webkit-line-clamp: 2;
+            word-break: break-word;
+            max-height: 56px;
+          }
+
+          @include tablet-down {
+            font-size: 14px;
+            padding-left: 16px;
+            text-align: left;
+            max-height: 50px;
+          }
+
+          @include phablet-down {
+            width: 80%;
+          }
+        }
+
+        .active-arrow {
+          position: absolute;
+          bottom: 0;
+          left: auto;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 15px 13px;
+          border-color: transparent transparent white;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateX(-50%);
+
+          @include tablet-down {
+            display: none;
+          }
+        }
+
+        &.hide {
+          text-align: center;
+          background-color: rgb(23, 107, 135);
+          color: $white;
+          border-bottom: 0;
+
+          @include container-up {
+            font-weight: bold;
+          }
+
+          @media only screen and (max-width: 767px) {
+            display: none;
+          }
+
+          p {
+            color: $white;
+            font-weight: bold;
+          }
+
+          .icon-box {
+            @include container-up {
+              margin-bottom: 3px;
+            }
+
+            svg {
+              path {
+                fill: $white;
+              }
+            }
+
+            .st0 {
+              fill: $white;
+            }
+            .st1 {
+              stroke: $white;
+              fill: none !important;
+            }
+
+            .cls-1,
+            .cls-2 {
+              stroke: $white;
+              fill: $white;
+            }
+          }
+
+          &:after {
+            border-right: 0;
+
+            @include tablet-down {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .tab-text {
+      display: none;
+    }
+
+    .tab-text.hide {
+      display: block;
+
+      @include tablet-down {
+        display: block;
+      }
+
+      h4 {
+        color: green;
+        font-weight: bold;
+        margin-bottom: 16px;
+
+        @include tablet-down {
+          margin-bottom: 8px;
+          font-size: 24px;
+          line-height: 1.35;
+        }
+      }
+
+      p {
+        margin-bottom: 24px;
+      }
+
+      ul{
+        li{
+          margin: 6px 0 24px;
+        }
+      }
+      &.text-with-image {
+        width: 100%;
+        float: left;
+        align-items: center;
+        min-height: 399px;
+
+        @include container-up {
+          padding: 42px 46px;
+        }
+
+        @include container-down {
+          padding: 40px 40px;
+        }
+
+        @include desktop-down {
+          padding: 45px 30px 30px;
+        }
+
+        @include tablet-down {
+          min-height: auto;
+          padding: 24px 24px 32px;
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .text-content {
+          width: calc(60.7%);
+          float: left;
+          padding-right: 70px;
+
+          @include container-up {
+            padding-left: 0;
+            padding-top: 7px;
+          }
+
+          @include container-down {
+            padding-right: 40px;
+          }
+
+          @include desktop-down {
+            padding-right: 20px;
+          }
+
+          @include tablet {
+            width: calc(60%);
+          }
+
+          @include tablet-down {
+            width: 100%;
+            float: none;
+            padding-right: 0;
+            text-align: left;
+            order: 2;
+            margin-top: 24px;
+          }
+
+          .button-box {
+            margin-top: 28px;
+
+            @include desktop-down {
+              margin-top: 20px;
+            }
+
+            @include tablet-down {
+              margin-top: 0;
+            }
+          }
+        }
+
+        .bg-img {
+          width: 39.3%;
+          float: left;
+          position: relative;
+
+          @include container-up {
+            margin-left: 0;
+            margin-right: 0px;
+          }
+
+          @include desktop-up {
+            z-index: 2;
+          }
+
+          @include tablet {
+            width: 40%;
+          }
+
+          @include tablet-down {
+            width: 100%;
+            float: none;
+          }
+
+          @include phablet-down {
+            max-width: 100%;
+          }
+
+          .img-wrapper {
+            position: relative;
+            height: 318px;
+            overflow: hidden;
+
+            @include container-up {
+              margin-top: 2px;
+            }
+
+            @include tablet-down {
+              margin: 0 auto 0 0;
+              height: 168px;
+              max-width: 352px;
+            }
+
+            .top-border {
+              display: none;
+            }
+
+            img {
+              @include tablet-down {
+                object-position: 100% 27%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ////for homepage service offer////
+  &.service-home {
+    padding-top: 0;
+
+    .bg-img {
+      background-image: linear-gradient(116deg, #0a0a0a, rgb(75, 75, 75));
+      top: 158px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      img {
+        object-position: 0 0;
+      }
+    }
+
+    .intro-box {
+      margin-top: 12px;
+
+      h2 {
+        font-weight: bold;
+      }
+    }
+
+    .column-wrapper {
+      .tab-text {
+        &.hide {
+          &.text-with-image {
+            .bg-img {
+              background: $white;
+              top: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+////for solution-page service offer////
+.solution-role {
+  @include container-up {
+    padding-top: 58px;
+  }
+
+  .bg-img {
+    @include desktop-up {
+      top: 38.5%;
+      height: 63.8%;
+    }
+
+    @include desktop {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  .intro-box {
+    h2 {
+      @include container-up {
+        letter-spacing: 0.45px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .column-wrapper {
+    @include container-up {
+      width: calc(100% + 1px);
+      margin-left: -1px;
+    }
+
+    .scroll-wrap {
+      .icon-with-heading {
+        @include desktop-up {
+          width: calc(16.66%);
+          min-height: 191px;
+          padding: 42px 31px 10px;
+        }
+
+        @include desktop {
+          width: calc(16.66%);
+          min-height: 191px;
+          padding: 35px 15px 12px;
+        }
+
+        @include tablet {
+          width: calc(16.66%);
+          min-height: 191px;
+          padding: 35px 5px 12px;
+        }
+
+        .active-arrow {
+          @include desktop-up {
+            border-width: 0 13px 12px;
+          }
+        }
+
+        .icon-box {
+          @include desktop-up {
+            width: 62px;
+            height: 57px;
+            margin: 0px auto 30px;
+          }
+
+          @include desktop {
+            width: 62px;
+            height: 57px;
+            margin: 0px auto 25px;
+          }
+
+          @include tablet {
+            width: 62px;
+            height: 57px;
+            margin: 0px auto 25px;
+          }
+        }
+
+        p {
+          @include desktop-up {
+            font-size: 18px;
+            font-weight: 600;
+          }
+
+          @include desktop {
+            font-size: 16px;
+          }
+
+          @include tablet {
+            font-size: 16px;
+          }
+        }
+
+        &.hide {
+          p {
+            @include desktop-up {
+              font-weight: 600;
+            }
+          }
+
+          .icon-box {
+            @include container-up {
+              margin: 0px auto 30px;
+            }
+          }
+        }
+      }
+    }
+    .tab-text.hide {
+      &.text-with-image {
+        .text-content {
+          a {
+
+          }
+          @include container-up {
+            padding-left: 0;
+            padding-top: 24px;
+          }
+
+          .button-box {
+            margin-top: 29px;
+          }
+        }
+      }
+    }
+  }
+}
+.info-four-items {
+  .column-wrapper {
+    .scroll-wrap {
+      .icon-with-heading {
+        width: 25%;
+
+        @include tablet-down {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.seven-items {
+  .column-wrapper {
+    .scroll-wrap {
+      .icon-with-heading {
+        @include desktop-up {
+          width: calc(14.28%);
+          min-height: 191px;
+          padding: 42px 31px 10px;
+        }
+
+        @include desktop {
+          width: calc(14.28%);
+          min-height: 191px;
+          padding: 35px 15px 12px;
+        }
+
+        @include tablet {
+          width: calc(14.28%);
+          min-height: 191px;
+          padding: 35px 5px 12px;
+        }
+
+        .active-arrow {
+          @include desktop-up {
+            border-width: 0 13px 12px;
+          }
+        }
+
+        .icon-box {
+          @include desktop-up {
+            width: 58px;
+            height: 57px;
+            margin: 0px auto 30px !important;
+          }
+
+          @include desktop {
+            width: 58px;
+            height: 57px;
+            margin: 0px auto 25px !important;
+          }
+
+          @include tablet {
+            width: 55px;
+            height: 57px;
+            margin: 0px auto 25px !important;
+          }
+        }
+
+        p {
+          @include desktop-up {
+            font-size: 18px;
+            font-weight: 600;
+          }
+
+          @include desktop {
+            font-size: 16px;
+          }
+
+          @include tablet {
+            font-size: 16px;
+          }
+        }
+
+        &.hide {
+          p {
+            @include desktop-up {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.seven-plus-item {
+  .column-wrapper {
+    .scroll-wrap {
+      .icon-with-heading {
+        @include desktop-up {
+          width: calc(14.28%);
+          min-height: 191px;
+          padding: 42px 31px 10px;
+        }
+
+        @include desktop {
+          width: calc(14.28%);
+          min-height: 191px;
+          padding: 35px 15px 12px;
+        }
+        @include tablet {
+          width: calc(14.28%);
+          min-height: 191px;
+          padding: 35px 5px 12px;
+        }
+        .active-arrow {
+          @include desktop-up {
+            border-width: 0 13px 12px;
+          }
+        }
+        .icon-box {
+          @include desktop-up {
+            width: 58px;
+            height: 57px;
+            margin: 0px auto 30px !important;
+          }
+          @include desktop {
+            width: 58px;
+            height: 57px;
+            margin: 0px auto 25px !important;
+          }
+
+          @include tablet {
+            width: 55px;
+            height: 57px;
+            margin: 0px auto 25px !important;
+          }
+        }
+        p {
+          @include desktop-up {
+            font-size: 18px;
+            font-weight: 600;
+          }
+
+          @include desktop {
+            font-size: 16px;
+          }
+          @include tablet {
+            font-size: 16px;
+          }
+        }
+        &.hide {
+          p {
+            @include desktop-up {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,99 @@
+.sticky {
+  z-index: 2;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  width: 100%;
+  transition: top 0.5s ease-in-out;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  .main-sticky-menu {
+    width: 100%;
+    background-color: white;
+    max-width: 1111px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 15px 30px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    @include phablet-down {
+      justify-content: center;
+    }
+  }
+  .sticky-menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+    position: relative;
+    @include desktop {
+      width: calc(100% - 275px);
+    }
+    li {
+      max-width: 200px;
+      position: relative;
+      margin-bottom: 0;
+      &:not(:last-child) {
+        margin-right: 100px;
+        margin-bottom: 0;
+      }
+      &:before {
+        display: none;
+      }
+      a {
+        color: #435363;;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.32;
+        position: relative;
+        @include desktop {
+          font-size: 18px;
+        }
+        @include tablet {
+          font-size: 16px;
+        }
+        @include tablet-down {
+          font-size: 16px;
+        }
+        &.active {
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+      span{
+        display: block;
+        color: black;
+        font-size: 18px;
+      }
+    }
+    &.brand-sticky {
+      width: 100%;
+      justify-content: center;
+      li {
+        text-align: center;
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+  .btn-wrap {
+    max-width: 330px;
+    @include desktop {
+      max-width: 275px;
+    }
+  }
+  &.top-border {
+    border-top: solid 1px white;
+  }
+  &.overlap{
+    top: -150px;
+    position: relative;
+  }
+}

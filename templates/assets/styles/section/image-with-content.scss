@@ -1,0 +1,29 @@
+.image-with-content{
+  .outer-wrap{
+    width: calc(100% + 50px);
+    margin-left: -25px;
+    display: flex;
+    .item{
+      width: calc(50% - 50px);
+      margin: 0 25px;
+      h3{
+        color: black;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+      p{
+        color: black;
+      }
+      .img-wrap{
+        min-height: 426px;
+        height: 100%;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

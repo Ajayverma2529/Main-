@@ -1,0 +1,64 @@
+.second-levele{
+  display: flex;
+  min-height: 560px;
+  align-items: center;
+  @include tablet-down{
+    min-height: 320px;
+  }
+  @include tablet{
+    min-height: 350px;
+  }
+  @include desktop {
+    min-height: 380px;
+  }
+  .bg-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .content-wrap{
+    max-width: 565px;
+    position: relative;
+    z-index: 1;
+    @include tablet{
+      max-width: 100%;
+    }
+    @include phablet-down{
+      text-align: center;
+    }
+    h1 {
+      color: white;
+      margin: 10px 0 0;
+    }
+    span{
+      font-size: 15px;
+      color: white;
+      font-family: sans-serif;
+    }
+    p{
+      color: white;
+      margin: 20px 0 0;
+    }
+    .btn-wrap{
+      margin-top: 20px;
+    }
+  }
+}
+.dark-black-overlay {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.50;
+  }
+}

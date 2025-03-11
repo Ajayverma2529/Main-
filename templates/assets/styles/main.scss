@@ -1,0 +1,88 @@
+@import "global/bootstrap";
+@import 'common/variables';
+@import 'plugins/slick';
+@import './plugins/animate';
+@import 'common/global';
+@import 'common/color-classes';
+
+// Add alll styles that need to target only our pages
+body {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  &.overflow {
+    overflow: hidden;
+  }
+}
+
+.sections {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+@import 'section/second-levele';
+@import 'section/img-with-content';
+@import 'section/intro-with-list';
+@import 'section/col-three';
+@import 'section/hero-banner';
+@import 'section/subscribe-form';
+@import 'section/cards-with content';
+@import "section/navigation";
+@import "section/cta-with-link";
+@import "section/footer";
+@import "section/intro";
+@import "section/intro-with-grid";
+@import "section/col-with-location";
+@import "section/cta-with-img bg-gray";
+@import "section/header";
+@import "section/accordion";
+@import "section/sticky-nav";
+@import "section/resource-grid";
+@import "section/counter";
+@import "section/box-gallery";
+@import "section/video-overlay";
+@import "section/col-three-card";
+@import "section/intro-with-col-two";
+@import "section/tabs-with-accordion";
+@import "section/blog-section";
+@import "section/tab-slider";
+@import "section/info-with-tabs";
+@import "section/resources";
+@import "section/col-with-img";
+@import "section/col-three-grid";
+@import "section/filter-blocks";
+@import "section/col-three-grids";
+@import "section/filter-with-card";
+@import "section/text-with-images";
+@import "section/blog-grid";
+@import "section/detail-banner";
+@import "section/tab-grid";
+@import "section/col-two-grid";
+@import "section/content-with-img";
+@import "section/third-levele-banner";
+@import "section/intro-section";
+@import "section/image-with-content";
+@import "section/surescript-img-with-grid";
+@import "section/viralnation";
+@import "section/services";
+@import "section/healthcare-detail";
+@import "section/riverbed";
+@import "section/awards";
+@import "section/splunk-com";
+@import "section/chinatelecom-com";
+@import "section/author-slider";
+@import "section/socure-logo-slider";
+@import "section/countdown-clock";
+@import "section/nile-com";
+@import "section/rhodes";
+@import"section/rhodes-services";
+@import"section/blog-resources";
+@import"section/aboutus-com";
+@import"section/leadership";
+@import"section/financial-services";
+@import"section/indian-railway";

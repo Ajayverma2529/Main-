@@ -1,0 +1,12 @@
+.intro{
+  //padding: 60px 0;
+  @include tablet-down{
+    padding: 40px 0;
+  }
+  .inner-title{
+    h2{
+      color: black;
+      text-align: center;
+    }
+  }
+}

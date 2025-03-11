@@ -1,0 +1,52 @@
+.logo-with-carousel {
+  .intro {
+    margin-bottom: 50px;
+    h2 {
+      text-align: center;
+      color: #000;
+    }
+
+    @include tablet-up {
+      margin-bottom: 50px;
+    }
+
+    @include phablet {
+      margin-bottom: 25px;
+    }
+
+    @include phablet-down {
+      margin-bottom: 25px;
+    }
+  }
+
+  .wrapper {
+    opacity: 0;
+
+    @include desktop-up {
+      // margin-top: 70px;
+    }
+
+    &.slick-initialized {
+      opacity: 1;
+    }
+
+    .item {
+      .img-wrap {
+        max-width: 200px;
+        overflow: hidden;
+        height: 40px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

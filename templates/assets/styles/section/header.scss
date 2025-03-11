@@ -1,0 +1,179 @@
+.header {
+  padding: 31px 0;
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 100%;
+  @include desktop-large {
+    padding: 20px 0;
+  }
+  @include desktop {
+    padding: 20px 0;
+  }
+  @include desktop-down {
+    padding: 10px 0 13px;
+  }
+  &.active {
+    background-color: $black;
+    nav {
+      @include desktop-down {
+        right: 0;
+        display: block!important;
+      }
+    }
+  }
+  &.fixed {
+    background-color: $black;
+  }
+  .logo {
+    float: left;
+    max-width: 171px;
+    max-height: 43px;
+    @include desktop-large {
+      max-width: 171px;
+    }
+    @include desktop {
+      max-width: 150px;
+    }
+    @include desktop-down {
+      max-width: 171px;
+      margin: 0 0 0 -4px;
+    }
+    @include phone-down {
+      max-width: 141px;
+      margin: 7px 0 0 -4px;
+    }
+    a {
+      display: block;
+    }
+  }
+  .humberger {
+    display: none;
+    @include desktop-down {
+      display: block;
+      position: relative;
+      float: right;
+      margin-top: 6px;
+      cursor: pointer;
+    }
+    span {
+      @include desktop-down {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: $white;
+        margin: 5px 0;
+        transition: transform .3s ease-in-out,background-color .3s ease-in-out,opacity .3s ease-in-out;
+      }
+    }
+    &.active {
+      .bar1 {
+        @include desktop-down {
+          background-color: $white;
+          transform: rotate(-45deg) translate(-5px,5px);
+        }
+      }
+      .bar2 {
+        @include desktop-down {
+          opacity: 0;
+        }
+      }
+      .bar3 {
+        @include desktop-down {
+          background-color: $white;
+          transform: rotate(45deg) translate(-6px,-7px);
+        }
+      }
+    }
+  }
+  nav {
+    float: left;
+    width: calc(100% - 394px);
+    position: relative;
+    @include desktop-large {
+      width: calc(100% - 350px);
+    }
+    @include desktop {
+      width: calc(100% - 300px);
+    }
+    @include desktop-down {
+      width: 400px;
+      display: block!important;
+      background-color: $white;
+      top: 49px;
+      height: 100vh!important;
+      position: absolute;
+      right: -410px;
+      overflow-y: auto;
+      text-align: left;
+      overflow-x: hidden;
+      padding: 0 0 80px;
+      transition: all .3s ease;
+    }
+  }
+
+  .right-nav {
+    float: right;
+    @include desktop-down {
+      float: left;
+      width: 100%;
+    }
+  }
+  .list-item {
+    @include desktop-down {
+      padding-left: 0;
+      width: 100%;
+    }
+    > li {
+      display: inline-block;
+      margin: 0 62px 0 10px;
+      vertical-align: middle;
+      padding: 0;
+      &::before{
+        display: none;
+      }
+      @include desktop-large {
+        margin: 0 40px 0 10px;
+      }
+      @include desktop {
+        margin: 0 28px 0 10px;
+      }
+      @include desktop-down {
+        padding: 0;
+        width: calc(100% - 40px);
+        margin: 0 20px;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+        position: relative;
+      }
+      &:last-child {
+        margin-right: 0;
+        @include desktop-down {
+          margin: 0 20px;
+          border-bottom: none;
+        }
+      }
+    }
+    a:not(.btn-default) {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0.54px;
+      color: $white;
+      @include desktop-down {
+        color: $black;
+        display: block;
+        padding: 10px 0;
+        pointer-events: auto;
+        margin: 0;
+        height: auto;
+        border: none;
+      }
+    }
+    .btn-default {
+      margin-top: 7px;
+      @include desktop-down {
+        margin-top: 16px;
+      }
+    }
+  }
+}

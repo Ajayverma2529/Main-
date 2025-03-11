@@ -1,0 +1,132 @@
+.cta-with-link {
+  .wrapper{
+    display: flex;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    min-height: 300px;
+    position: relative;
+    @include phablet-down{
+      display: block;
+      padding: 15px;
+    }
+    @include phablet{
+      display: block;
+    }
+  }
+  .col-six{
+    width: 60%;
+    @include phablet{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    @include phablet-down{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    h2{
+      font-size: 50px;
+      max-width: 500px;
+      margin-top: 20px;
+      color: black;
+      @include phablet-down{
+        font-size: 35px;
+      }
+      @include phablet{
+        font-size: 40px;
+      }
+      @include tablet{
+        font-size: 45px;
+      }
+    }
+  }
+  .col-four{
+    width: 40%;
+    @include phablet{
+      width: 100%;
+    }
+    @include phablet-down{
+      width: 100%;
+    }
+    .cta-text{
+      position: relative;
+    }
+    a{
+      border: 1px solid black;
+      border-radius: 8px;
+      position: relative;
+      display: block;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      text-align: left;
+      padding: 29px 68px 23px 60px;
+      background-color: transparent;
+      color: #000000;
+      margin-top: 15px;
+      outline: none;
+    }
+    .icon-wrap{
+      position: absolute;
+      top: 9px;
+      bottom: 0;
+      margin: auto;
+      max-width: 40px;
+      left: 16px;
+      height: 30px;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .arrow{
+      position: absolute;
+      top: 19px;
+      bottom: 0;
+      margin: auto;
+      right: 27px;
+      width: 40px;
+      height: 31px;
+      @include phablet-down{
+        right: 16px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  .bg-img{
+    overflow: hidden;
+    position: absolute;
+    right: 65px;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 311px;
+    min-height: 370px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    @include tablet{
+      position: relative;
+      right: 0;
+      height: 300px;
+      max-width: 100%;
+      min-height: 100%;
+    }
+    @include tablet-down{
+      position: relative;
+      right: 0;
+      max-width: 100%;
+      height: 250px;
+      min-height: 100%;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

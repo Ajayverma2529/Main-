@@ -1,0 +1,278 @@
+.author-slider {
+  background: linear-gradient(90deg, #01161f 0%, #000000 100%);
+  overflow: hidden;
+  padding: 100px 0;
+
+  .intro {
+    padding-top: 0;
+    margin-bottom: 55px;
+    z-index: 1;
+    position: relative;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include phablet {
+      margin-bottom: 0;
+    }
+
+    @include phablet-down {
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: $white;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  .content-wrap {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 1400px) {
+      padding: 0 35px;
+    }
+
+    @include phablet-down {
+      padding: 0 20px;
+    }
+
+    @include phablet-down {
+      width: 100%;
+      margin: auto;
+      display: block;
+      text-align: center;
+    }
+
+    .card-item {
+      .inner-wrap {
+        display: flex;
+        align-items: center;
+
+        @include tablet-down {
+          display: block;
+          text-align: center;
+        }
+
+        .outer-img-wrap {
+          width: 45%;
+          padding-right: 10px;
+
+          @include tablet-down {
+            width: 100%;
+            padding-right: 0;
+            padding-bottom: 25px;
+          }
+
+          .img-wrap {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 350px;
+            float: right;
+            height: 350px;
+            border: 6px solid #fff;
+
+            @include tablet {
+              width: 250px;
+              height: 250px;
+            }
+
+            @include phablet {
+              width: 250px;
+              height: 250px;
+            }
+
+            @include phablet-down {
+              width: 200px;
+              height: 200px;
+            }
+
+            @include tablet-down {
+              float: none;
+              margin: auto;
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            .social-icon {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              margin: auto;
+              width: 50px;
+              z-index: 2;
+              height: 50px;
+              overflow: hidden;
+
+              @include tablet-down {
+                width: 40px;
+                height: 40px;
+              }
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+
+        .card-intro {
+          width: 55%;
+          padding-left: 28px;
+
+          @include tablet-down {
+            width: 100%;
+            padding-left: 0;
+          }
+
+          .inner-intro {
+            span {
+              display: block;
+              color: #ff6900;
+              font-size: 25px;
+            }
+
+            h4 {
+              font-size: 25px;
+              color: #fff;
+              margin-top: 15px;
+            }
+
+            p {
+              font-size: 25px;
+              color: #fff;
+              margin-top: 15px;
+
+              @include tablet-down {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .slick-arrow {
+    opacity: 0;
+  }
+
+  .slick-next {
+    text-indent: 100px;
+    overflow: hidden;
+    height: 54px;
+    width: 22px;
+    position: absolute;
+    top: 22%;
+    right: -32px;
+    background: url(/ajayverma/templates/assets/images/slick_arrow_prev.svg) no-repeat;
+    background-size: cover;
+    transform: rotate(180deg);
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+    transition: opacity 0.2s ease-in-out;
+
+    @media (max-width: 1400px) {
+      right: 5px !important;
+    }
+
+    @include phablet-down {
+      right: -9px !important;
+    }
+
+    @include tablet-down {
+      height: 30px;
+      width: 18px;
+    }
+
+
+
+  }
+
+  .slick-prev {
+    text-indent: 100px;
+    overflow: hidden;
+    height: 54px;
+    width: 22px;
+    position: absolute;
+    top: 22%;
+    left: -32px;
+    background: url(/ajayverma/templates/assets/images/slick_arrow_prev.svg) no-repeat;
+    background-size: cover;
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+    transition: opacity 0.2s ease-in-out;
+
+    @media (max-width: 1400px) {
+      left: 5px !important;
+    }
+
+    @include phablet-down {
+      left: -9px !important;
+    }
+
+    @include tablet-down {
+      height: 30px;
+      width: 18px;
+    }
+  }
+
+  .slick-dots {
+    margin: 20px auto 0;
+    max-width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding-left: 0;
+
+    // display: none!important;
+    @include phablet-down {
+      display: inline-flex !important;
+    }
+
+    li {
+      margin: 5px 4px 0;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: solid 2px #fff;
+      padding-left: 10px;
+      cursor: pointer;
+
+      &:before {
+        display: none !important;
+      }
+
+      button {
+        display: none;
+        font-size: 0;
+      }
+    }
+
+    .slick-active {
+      border: solid 1px #ff6900;
+      background-color: #ff6900;
+    }
+  }
+}

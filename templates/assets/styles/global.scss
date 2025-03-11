@@ -1,0 +1,10 @@
+// Bootstrap integration
+@import "/bootstrap/scss/bootstrap";
+// Our variables
+@import 'common/variables';
+
+// Header & Footer
+body {
+  @import 'global/header';
+  @import 'global/footer';
+}

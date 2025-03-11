@@ -1,0 +1,172 @@
+@each $name, $hex in $custom-colors {
+  $btn-text-color: color(white);
+  @if index(white, $name) {
+    $btn-text-color: color(terminal-black);
+  }
+
+  header {
+    .header-wrap {
+      background-color: transparent;
+      &.bg-#{$name} {
+        .logo {
+          &:before {
+            background-color: $hex;
+          }
+          &:after {
+            background-color: $hex;
+          }
+        }
+        .menu {
+          background-color: $hex;
+          ul {
+            li {
+              &.menu-item-has-children {
+                ul {
+                  background-color: $hex;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  header {
+    .header-wrap {
+      &.text-#{$name} {
+        .menu {
+          .burger-menu {
+            span {
+              background-color: $hex;
+            }
+          }
+          ul {
+            li {
+              a {
+                color: $hex;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: transparent !important;
+    &.bg-#{$name} {
+      .logo {
+        &:before {
+          background-color: $hex;
+        }
+        &:after {
+          background-color: $hex;
+        }
+        a {
+          &:after {
+            background-color: $hex;
+          }
+        }
+      }
+    }
+  }
+  footer .footer-content.text-#{$name} svg {
+    background-color: $hex;
+    border: 1px solid $hex;
+  }
+  .bg-#{$name} {
+    background-color: $hex;
+  }
+
+  .text-#{$name} {
+    h1, h2, h3, h4, h5, h6, p, li, span {
+      color: $hex;
+    }
+  }
+  .why-us.text-#{$name} .box-wrap .box .content .wrap {
+    border-color: $hex;
+  }
+  .btn-default.btn-color-#{$name} {
+    background-color: $hex;
+    border-color: $hex;
+    color: $white;
+    box-shadow: 0 0 40px 40px $hex inset, 0 0 0 0 $hex;
+    transition: all 150ms ease-in-out;
+    &:hover {
+      background-color: transparent;
+      color: $hex;
+      box-shadow: 0 0 10px 0 $hex inset, 0 0 10px 4px $hex;
+    }
+  }
+
+  .btn-outline-side-hover.btn-color-#{$name} {
+    border-color: $hex;
+    color: $hex;
+    background: {
+      image: linear-gradient(45deg, $hex 50%, transparent 50%);
+      position: 98%;
+      size: 400%;
+    }
+    transition: background 300ms ease-in-out;
+
+    &:hover {
+      color: white;
+      background-position: 0;
+    }
+  }
+
+  .btn-outline-center-hover.btn-color-#{$name} {
+    border-radius: 0;
+    color: $hex;
+    border-color: $hex;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 150ms ease-in-out;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 100%;
+      background: $hex;
+      z-index: -1;
+      transition: width 150ms ease-in-out;
+    }
+
+    &:hover {
+      color: #fff;
+      &:after {
+        width: 110%;
+      }
+    }
+  }
+
+  .btn-default.btn-color-white {
+    color: $black;
+  }
+
+  .btn-outline-side-hover.btn-color-white {
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .btn-outline-center-hover.btn-color-white {
+    &:hover {
+      color: $black;
+    }
+  }
+
+}
+.bg-light-blue{
+  background-color: #DAE8EA;
+}
+.light-black{
+  background-color: #151e28;
+}

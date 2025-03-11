@@ -1,0 +1,42 @@
+{
+  "dependencies": {
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "plugins.css": {
+      "files": [
+        "styles/plugins/*.scss",
+        "styles/plugins/*.css"
+      ]
+    },
+    "main.js": {
+      "files": [
+        "scripts/main.js",
+        "scripts/sections/*.js",
+        "scripts/global/*.js"
+      ],
+      "main": true
+    },
+    "plugins.js": {
+      "files": [
+        "scripts/plugins/*.js"
+      ]
+    },
+    "jquery_min.js": {
+      "files": [
+        "scripts/jquery.min.js"
+      ]
+    }
+  },
+  "paths": {
+    "source": "templates/assets/",
+    "dist": "templates/dist/"
+  },
+  "config": {
+    "devUrl": "abhi.test",
+    "minify": false
+  }
+}

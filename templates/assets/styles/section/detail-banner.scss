@@ -1,0 +1,244 @@
+.detail-banner{
+  background-color: #e3e3e3;
+  padding: 65px 0 56px;
+  min-height: 340px;
+  position: relative;
+  .wrapper{
+    width:100%;
+    padding: 0 8px;
+  }
+  .inner-text{
+    h6{
+      position:relative;
+      font-size: 14px;
+      padding-left: 15px;
+      line-height: 1.43;
+      &:before{
+        content: "";
+        //background: url("/templates/dist/images/detail-page/carousel-control-copy.svg");
+        background-size: cover;
+        z-index: 1;
+        display: inline-block;
+        vertical-align: top;
+        width: 10px;
+        height: 17px;
+        position: relative;
+        right: 10px;
+        top: 2px;
+        cursor: pointer;
+        transform: rotate(180deg);
+      }
+    }
+    span{
+      margin-top: 34px;
+      font-size: 12px;
+      font-weight: 500;
+      display: block;
+    }
+    p{
+      font-size:18px;
+      max-width: 548px;
+      margin-bottom: 50px;
+      line-height: 1.78;
+      @include desktop-down{
+        margin-bottom: 15px;
+        max-width: 100%;
+      }
+    }
+    h3{
+      line-height: 1.25;
+      margin-top: 15px;
+      max-width: 604px;
+      margin-bottom: 20px;
+      @include desktop{
+        max-width: 550px;
+      }
+      @include desktop-down{
+        max-width: 100%;
+      }
+    }
+  }
+  .bottom-border-gradient{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 24px;
+    background: linear-gradient(270deg, rgba(0,134,161,1) 51%, rgba(0,79,109,1) 92%);
+  }
+  .static-block{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    background: linear-gradient(270deg, rgba(0,134,161,1) 51%, rgba(0,79,109,1) 92%);
+    padding: 20px 0 30px;
+    @include desktop-down{
+      width: 100%;
+      margin-left: 0;
+    }
+    .col-three{
+      width: calc(33.33% - 20px);
+      padding: 0;
+      max-width: 204px;
+      text-align: left;
+      margin: 0 10px;
+      position: relative;
+      display: inline-block;
+      //@include large_container-up{
+      //  margin: 0 30px 0 0;
+      //}
+      //@include large_desktop{
+      //  max-width:170px;
+      //}
+      @include tablet{
+        width: 33.33%;
+        padding: 0 20px;
+        max-width: 100%;
+        margin: 0;
+      }
+      @include phablet{
+        width: 33.33%;
+        padding: 0 20px;
+        max-width: 100%;
+        margin: 0;
+      }
+      @include phablet-down{
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 10px 0 0 0;
+      }
+      h2{
+        color:$white;
+        //@include large_container-up{
+        //  font-size: 48px;
+        //}
+        span{
+          font-size: 48px;
+          color:$white;
+          @include tablet-down{
+            font-size: 38px;
+          }
+        }
+      }
+      p{
+        padding: 0 3px;
+        color:$white;
+        line-height: 1.63;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+  .outer-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    overflow: visible;
+    z-index: 2;
+    right: 0;
+    bottom:-35px;
+    width: 354px;
+    height: 315px;
+    @include desktop-down{
+      position: relative;
+      margin : 20px;
+      height: 300px;
+      width: 280px;
+      bottom: 0;
+    }
+
+    .logo-wrap {
+      position: absolute;
+      margin: auto;
+      max-width: 200px;
+      max-height: 127px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .inner-text{
+      position: absolute;
+      margin: auto;
+      span{
+        font-size: 24px;
+        font-weight: 600;
+        color: $white;
+        text-align: center;
+      }
+    }
+
+    .img-wrap {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 0;
+      max-width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .inner-text{
+      position: absolute;
+      margin: auto;
+      span{
+        font-size: 40px;
+        font-weight: 600;
+        color: $white;
+        text-align: center;
+        //@include container-down{
+        //  font-size: 28px;
+        //}
+      }
+    }
+  }
+
+  &.static{
+    padding: 69px 0 0;
+    .inner-text{
+      h3{
+        margin-top: 32px;
+      }
+      p{
+        margin-bottom: 54px;
+        @include desktop-down{
+          margin-bottom: 15px;
+        }
+      }
+    }
+    .outer-wrap{
+      width: 446px;
+      height: 396px;
+      //@include large_container-up{
+      //  width: 538px;
+      //  height: 480px;
+      //}
+      @include desktop{
+        width: 422px;
+        height: 330px;
+      }
+      @include tablet{
+        height: 327px;
+      }
+      @include phablet{
+        height: 327px;
+      }
+      @include phone{
+        height: 280px;
+      }
+      @include phone-down{
+        width: 100%;
+        max-width: 100%;
+        height: 265px;
+      }
+    }
+  }
+}
